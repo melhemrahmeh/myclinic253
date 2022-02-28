@@ -10,6 +10,7 @@ import TeamPage from "./components/Pages/TeamPage.js"
 import Login from "./components/Pages/Login.js"
 import Join from "./components/Pages/Join.js"
 import Material_Table from "./components/Tables/Material_Table.js"
+import PatientTable from "./components/Tables/PatientTable.js"
 import Main from "./Dashboard/Main.js"
 
 
@@ -30,7 +31,8 @@ export default function App() {
         <Route path="team/" element={<TeamPage />} />
         <Route path="login/" element={<Login />} />
         <Route path="join/" element={<Join />} />
-        <Route path="table3/" element={<Material_Table />} />
+        <Route path="myemployees/" element={<Material_Table />} />
+        <Route path="mypatients/" element={<PatientTable />} />
         <Route path="admin/" element={<Main />} />
       </Routes>
     </div>

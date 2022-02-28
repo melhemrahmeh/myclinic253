@@ -1,6 +1,6 @@
 import MaterialTable from "material-table";
 
-export default function Material_Table() {
+export default function PatientTable() {
 
     const data = [
         { name: "John", email: "john@gmail.com", age: 12, gender: "Male" },
@@ -27,11 +27,11 @@ export default function Material_Table() {
             title: "Gender",
             field: "gender",
         },
-        
+
     ];
     return (
         <MaterialTable
-            title="My Employees"
+            title="My Patients"
             data={data}
             columns={columns}
             options={{ search: true, paging: false, filtering: true, exportButton: true }}
