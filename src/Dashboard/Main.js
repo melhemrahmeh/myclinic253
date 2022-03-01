@@ -65,7 +65,7 @@ export default function Main() {
                     <li>
                         <a href="#" className="logout">
                             <i className="bx bxs-log-out-circle" />
-                            <span className="text">Logout</span>
+                            <Link to={"../"}><span className="text" >Logout</span></Link>
                         </a>
                     </li>
                 </ul>
