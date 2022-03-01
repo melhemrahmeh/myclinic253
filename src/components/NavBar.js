@@ -10,14 +10,14 @@ export default function NavBar(props) {
   if (props.isMain) {
     team = "./team";
     about = "./about";
-    login = "./login";
-    join = "./join";
+    login = "./admin";
+    join = "./admin";
     operations = "./operations"
   } else {
     team = "../team";
     about = "../about";
-    login = "../login";
-    join = "../join";
+    login = "../admin";
+    join = "../admin";
     operations = "../operations"
 
   }
