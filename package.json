@@ -21,6 +21,7 @@
     "jquery": "^3.6.0",
     "material-table": "^1.69.3",
     "mdbreact": "^5.2.0",
+    "netlify-cli": "^9.9.0",
     "react": "^17.0.2",
     "react-big-calendar": "^0.38.9",
     "react-datepicker": "^4.6.0",
@@ -29,6 +30,7 @@
     "react-select": "^5.2.2",
     "save-dev": "^0.0.1-security",
     "scheduler-library": "^1.2.2",
+    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
