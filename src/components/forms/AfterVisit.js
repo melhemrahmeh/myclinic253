@@ -60,15 +60,16 @@ export default function AfterVisit() {
                                         </div>
                                     </div>
                                     <div className="col-12 col-sm-6">
-                                        <br />
                                         <div className="date" id="date" data-target-input="nearest">
+                                            <br /><br />
                                             <label for="date"> Next Visit</label>
                                             <input type="date" value="2017-06-01" className="form-control bg-light border-0 datetimepicker-input" data-target="#date" data-toggle="datetimepicker" style={{ height: '55px' }} />
                                         </div>
                                     </div>
                                     <div className="col-12 col-sm-6">
-                                        <br /> <br />
                                         <div className="time" id="time" data-target-input="nearest">
+                                            <br /><br />
+                                            <label for="date">. </label>
                                             <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }} value="09:00" />
                                         </div>
                                     </div>

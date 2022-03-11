@@ -10,8 +10,8 @@ import AddPatientPage from "./components/Pages/DashboardPages/AddPatientPage.js"
 import TeamPage from "./components/Pages/MyClinicPages/TeamPage.js"
 import Login from "./components/Pages/MyClinicPages/Login.js"
 import Join from "./components/Pages/MyClinicPages/Join.js"
-import Material_Table from "./components/tables/Material_Table.js"
-import PatientTable from "./components/tables/PatientTable.js"
+import MyPatientsPage from "./components/Pages/DashboardPages/MyPatientsPage"
+import MyEmployeesPage from "./components/Pages/DashboardPages/MyPatientsPage"
 import Main from "./components/dashboard/Main.js"
 
 
@@ -32,8 +32,8 @@ export default function App() {
         <Route path="aftervisit/" element={<AfterVisitPage />} />
         <Route path="addemployee/" element={<AddEmployeePage />} />
         <Route path="addpatient/" element={<AddPatientPage />} />
-        <Route path="myemployees/" element={<Material_Table />} />
-        <Route path="mypatients/" element={<PatientTable />} />
+        <Route path="myemployees/" element={<MyEmployeesPage />} />
+        <Route path="mypatients/" element={<MyPatientsPage />} />
         <Route path="dashboard/" element={<Main />} />
         <Route path="myappointments/" element={<MyAppointments />} />
 

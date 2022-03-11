@@ -1,6 +1,6 @@
 import Sidebar from "../../dashboard/Sidebar.js";
 import Navbar from "../../dashboard/Navbar.js";
-import Schedule from "../../schedule/Schedule.js"
+import AfterVisit from "../../forms/AfterVisit.js"
 import React from 'react';
 
 export default function AfterVisitPage() {
@@ -8,7 +8,7 @@ export default function AfterVisitPage() {
         <div>
             <Sidebar isMain={false} />
             <Navbar />
-            <Schedule />
+            <AfterVisit />
         </div>
     );
 }

@@ -1,16 +1,14 @@
-import Header from "../../myclinic/Header.js"
-import Footer from "../../myclinic/Footer.js"
-import NavBar from "../../myclinic/NavBar.js"
+import Sidebar from "../../dashboard/Sidebar.js";
+import Navbar from "../../dashboard/Navbar.js";
 import AddPatient from "../../forms/AddPatient.js"
 
 export default function AddPatientPage() {
 
     return (
         <div>
-            <Header />
-            <NavBar isMain={false}/>
+            <Sidebar isMain={false} />
+            <Navbar />
             <AddPatient />
-            <Footer isMain={false} isTeam={false} />
         </div>
     );
 }

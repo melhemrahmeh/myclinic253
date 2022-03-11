@@ -16,7 +16,7 @@ export default function Sidebar(props) {
         addemployee = "./addemployee";
         myemployees = "./myemployees";
         mypatients = "./mypatients";
-        schedule = "./schedule";
+        schedule = "./myappointments";
         aftervisit = "./aftervisit";
         profile = "./profile";
         login = "./login";
@@ -26,7 +26,7 @@ export default function Sidebar(props) {
         addemployee = "../addemployee";
         myemployees = "../myemployees";
         mypatients = "../mypatients";
-        schedule = "../schedule";
+        schedule = "../myappointments";
         aftervisit = "../aftervisit";
         profile = "../profile";
         login = "../login";
