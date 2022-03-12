@@ -75,8 +75,7 @@ export default function AfterVisit() {
                                     </div>
                                     <div className="col-12 col-sm-6">
                                         <br /> <br />
-                                        <textarea rows="4" cols="80" className="form-control bg-light border-0">
-                                            Medicaments List
+                                        <textarea rows="4" cols="80" className="form-control bg-light border-0" placeholder="Medicaments List">
                                         </textarea>
                                     </div>
                                     <div className="col-12 col-sm-6">

@@ -5,32 +5,29 @@ export default function Sidebar(props) {
     var addemployee;
     var myemployees;
     var mypatients;
-    var schedule;
+    var myappointments;
     var aftervisit;
     var profile;
     var login;
-    var dashboard;
 
     if (props.isMain) {
         addpatient = "./addpatient";
         addemployee = "./addemployee";
         myemployees = "./myemployees";
         mypatients = "./mypatients";
-        schedule = "./myappointments";
+        myappointments = "./myappointments";
         aftervisit = "./aftervisit";
         profile = "./profile";
         login = "./login";
-        dashboard = "./dashboard"
     } else {
         addpatient = "../addpatient";
         addemployee = "../addemployee";
         myemployees = "../myemployees";
         mypatients = "../mypatients";
-        schedule = "../myappointments";
+        myappointments = "../myappointments";
         aftervisit = "../aftervisit";
         profile = "../profile";
         login = "../login";
-        dashboard = "../dashboard"
     }
 
     return (
@@ -49,7 +46,7 @@ export default function Sidebar(props) {
                 <li>
                     <a href="#">
                         <i className="bx bxs-calendar" />
-                        <Link to={schedule}><span className="text" >My Appointments </span></Link>
+                        <Link to={myappointments}><span className="text" >My Appointments </span></Link>
                     </a>
                 </li>
                 <li>
