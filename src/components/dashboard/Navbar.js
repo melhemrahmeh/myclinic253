@@ -26,7 +26,6 @@ export default function Navbar() {
                     <img src="assets/dashboard/img/people.png" />
                 </a>
             </nav>
-            <br />
         </section>
     );
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Dash() { 
     return (
+        
         <main>
             <div className="head-title">
                 <div className="left">
@@ -30,8 +31,8 @@ export default function Dash() {
                     <li>
                         <i className="bx bxs-calendar-check" />
                         <span className="text">
-                            <h3>1020</h3>
-                            <p>New Order</p>
+                            <h3>5</h3>
+                            <p>Today's Appointments</p>
                         </span>
                     </li>
                     <li>

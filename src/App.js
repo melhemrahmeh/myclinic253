@@ -12,6 +12,7 @@ import Login from "./components/Pages/MyClinicPages/Login.js"
 import Join from "./components/Pages/MyClinicPages/Join.js"
 import MyPatientsPage from "./components/Pages/DashboardPages/MyPatientsPage"
 import MyEmployeesPage from "./components/Pages/DashboardPages/MyPatientsPage"
+import UserProfilePage from "./components/Pages/DashboardPages/UserProfilePage"
 import Main from "./components/dashboard/Main.js"
 
 
@@ -36,7 +37,7 @@ export default function App() {
         <Route path="mypatients/" element={<MyPatientsPage />} />
         <Route path="dashboard/" element={<Main />} />
         <Route path="myappointments/" element={<MyAppointments />} />
-
+        <Route path="user/" element={<UserProfilePage />} />
       </Routes>
     </div>
   );
