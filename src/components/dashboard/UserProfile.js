@@ -94,16 +94,16 @@ export default function UserProfile() {
                                 <tr>
                                     <td>01-10-2020</td>
                                     <td>
-                                        <span className="status completed">Completed</span>
+                                        <span className="status process">Process</span>
                                     </td>
                                     <td>
-                                        <i class='bx bxs-file-pdf' style={{ "font-size": "1.3em", "font-family": "sans-serif" }}></i>After Visit.pdf
+                                        <i class='bx bxs-file-pdf' style={{ "font-size": "1.3em", "font-family": "sans-serif" }}></i>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>18-11-2021</td>
                                     <td>
-                                        <span className="status pending">Pending</span>
+                                        <span className="status completed">Completed</span>
                                     </td>
                                     <td>
                                         <i class='bx bxs-file-pdf' style={{ "font-size": "1.3em", "font-family": "sans-serif" }}></i>After Visit.pdf
@@ -112,7 +112,7 @@ export default function UserProfile() {
                                 <tr>
                                     <td>19-05-2022</td>
                                     <td>
-                                        <span className="status process">Process</span>
+                                        <span className="status completed">Completed</span>
                                     </td>
                                     <td>
                                         <i class='bx bxs-file-pdf' style={{ "font-size": "1.3em", "font-family": "sans-serif" }}></i>After Visit.pdf
@@ -121,7 +121,7 @@ export default function UserProfile() {
                                 <tr>
                                     <td>01-07-2021</td>
                                     <td>
-                                        <span className="status pending">Pending</span>
+                                        <span className="status completed">Completed</span>
                                     </td>
                                     <td>
                                         <i class='bx bxs-file-pdf' style={{ "font-size": "1.3em", "font-family": "sans-serif" }}></i>After Visit.pdf
