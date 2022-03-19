@@ -82,6 +82,11 @@ export const SidebarData = [
 		icon: <IoIcons.IoMdHelpCircle />,
 	},
 	{
+		title: "User Profile",
+		path: "/user",
+		icon: <IoIcons.IoMdHelpCircle />,
+	},
+	{
 		title: "Logout",
 		path: "/",
 		icon: <BiIcons.BiLogOut />,

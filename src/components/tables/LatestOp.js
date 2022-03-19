@@ -8,9 +8,9 @@ export default function Material_Table() {
     const data = [
         { user: "John", datetime: "20-2-2022", status: "Completed", fee: "100$" },
         { user: "John", datetime: "20-2-2022", status: "Completed", fee: "100$" },
-        ];
+    ];
     const columns = [
-        
+
         {
             title: "User",
             field: "user",
@@ -27,23 +27,25 @@ export default function Material_Table() {
             title: "Fee",
             field: "fee",
         },
-        
+
     ];
     return (
         <MaterialTable
             title="Latest Visits"
             data={data}
             columns={columns}
-           
 
-            options={{tableLayout: "auto", columnResizable: false,search: true, paging: true, filtering: false, grouping: true, exportButton: true,
+
+            options={{
+                tableLayout: "auto", columnResizable: false, search: true, paging: true, filtering: false, grouping: true, exportButton: true,
                 headerStyle: {
                     backgroundColor: '#27c4d3',
                     color: '#FFF'
                 },
                 rowStyle: rowData => ({
                     backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
-                }) }
+                })
+            }
             }
             actions={[
                 {
