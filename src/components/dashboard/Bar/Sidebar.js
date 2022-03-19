@@ -65,7 +65,7 @@ const Sidebar = () => {
 								color: "#26B0C2"
 							}}
 						>
-							MYCLINIC
+							MyClinic
 						</h1>
 
 						{/* 

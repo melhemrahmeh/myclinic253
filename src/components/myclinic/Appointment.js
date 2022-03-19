@@ -13,7 +13,6 @@ export default function Appointment() {
               <h1 className="display-4">Make An Appointment For You or for Your Family</h1>
             </div>
             <p className="text-white mb-5">The Easiest Way to Book an Appointment! </p>
-            <Link to={"../"}> MyClinic</Link>
             <Link to={"/operations"} className="btn btn-dark rounded-pill py-3 px-5 me-3">See Operations' List</Link>
             <a className="btn btn-outline-dark rounded-pill py-3 px-5" href>Read More</a>
           </div>

@@ -3,6 +3,8 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
+import * as BiIcons from "react-icons/bi";
+
 
 export const SidebarData = [
 	{
@@ -24,7 +26,7 @@ export const SidebarData = [
 	},
 	{
 		title: "Patients",
-		path: "/mypatients",
+		path: "",
 		icon: <FaIcons.FaPhone />,
 		iconClosed: <RiIcons.RiArrowDownSFill />,
 		iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -43,7 +45,7 @@ export const SidebarData = [
 	},
 	{
 		title: "Employees",
-		path: "/myemployees",
+		path: "",
 		icon: <FaIcons.FaEnvelopeOpenText />,
 
 		iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -65,7 +67,7 @@ export const SidebarData = [
 	{
 		title: "After Visit Summary",
 		path: "/aftervisit",
-		icon: <IoIcons.IoMdHelpCircle />,
+		icon: <AiIcons.AiOutlineForm />,
 	},
 
 	{
@@ -78,5 +80,10 @@ export const SidebarData = [
 		title: "Test",
 		path: "/test",
 		icon: <IoIcons.IoMdHelpCircle />,
+	},
+	{
+		title: "Logout",
+		path: "/",
+		icon: <BiIcons.BiLogOut />,
 	},
 ];

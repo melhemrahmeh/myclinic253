@@ -48,7 +48,7 @@ export default function App() {
         <Route path="myappointments/" element={<MyAppointments />} />
         <Route path="profile/" element={<Settings />} />
 
-
+        
         <Route path="test/" element={<Test />} />
       </Routes>
     </div>
