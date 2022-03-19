@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-
+import styles from 'styles.css'
 
 export default function Dash() { 
     return (
-        
         <main>
             <div className="head-title">
                 <div className="left">
@@ -31,8 +30,8 @@ export default function Dash() {
                     <li>
                         <i className="bx bxs-calendar-check" />
                         <span className="text">
-                            <h3>5</h3>
-                            <p>Today's Appointments</p>
+                            <h3>1020</h3>
+                            <p>New Order</p>
                         </span>
                     </li>
                     <li>
@@ -70,7 +69,7 @@ export default function Dash() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src="assets/dashboard/img/people.png" />
+                                    <img src="assets/dashboard/img/people.png" alt=""/>
                                     <p>John Doe</p>
                                 </td>
                                 <td>01-10-2020</td>
@@ -80,7 +79,7 @@ export default function Dash() {
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="assets/dashboard/img/people.png" />
+                                    <img src="assets/dashboard/img/people.png" alt="" />
                                     <p>Melhem Rahmeh</p>
                                 </td>
                                 <td>18-11-2021</td>
@@ -90,7 +89,7 @@ export default function Dash() {
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="assets/dashboard/img/people.png" />
+                                    <img src="assets/dashboard/img/people.png"alt="" />
                                     <p>Nathalie Nassar</p>
                                 </td>
                                 <td>19-05-2022</td>
@@ -100,7 +99,7 @@ export default function Dash() {
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="assets/dashboard/img/people.png" />
+                                    <img src="assets/dashboard/img/people.png" alt=""/>
                                     <p>Mohammad Lahib</p>
                                 </td>
                                 <td>01-07-2021</td>
@@ -110,7 +109,7 @@ export default function Dash() {
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="assets/dashboard/img/people.png" />
+                                    <img src="assets/dashboard/img/people.png" alt=""/>
                                     <p>Israa Diab</p>
                                 </td>
                                 <td>11-08-2022</td>

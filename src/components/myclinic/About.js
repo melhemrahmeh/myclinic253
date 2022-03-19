@@ -1,4 +1,6 @@
-export default function ABout() {
+import React from 'react'
+
+export default function About() {
   return (
     <div className="container-fluid py-5">
       <div className="container">
@@ -19,10 +21,6 @@ export default function ABout() {
             <p>We will be committed to excellence in all of our services so that we may help clinics achieve the highest level of dental health professionalism appropriate for their needs in an atmosphere of trust and compassion.</p>
           </div>
           <div><div className="row g-3 pt-3">
-            <div className="col-sm-1 col-6">
-              <div className="bg-light text-center rounded-circle py-4">
-              </div>
-            </div>
             <div className="col-sm-2 col-6">
               <div className="bg-light text-center rounded-circle py-4">
                 <i className="fa fa-3x fa fa-users text-primary mb-3" />

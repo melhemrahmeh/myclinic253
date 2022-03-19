@@ -1,3 +1,5 @@
+import React  from 'react'
+
 export default function AddEmployee() {
     return (
         <div className="container-fluid bg-primary my-5 py-5">

@@ -6,19 +6,28 @@ export default function NavBar(props) {
   var about;
   var login;
   var join;
+  var joinworker;
+  var joinclinic;
   var operations;
   if (props.isMain) {
     team = "./team";
     about = "./about";
     login = "./login";
-    join = "./dashboard";
-    operations = "./operations"
+    join = "./joinpatient";
+    operations = "./operations";
+
+    joinworker = "./joinworker";
+    joinclinic = "./joinclinic";
+
   } else {
     team = "../team";
     about = "../about";
     login = "../login";
-    join = "../dashboard";
-    operations = "../operations"
+    join = "../joinpatient";
+    operations = "../operations";
+
+    joinworker = "../joinworker";
+    joinclinic = "../joinclinic";
   }
 
   return (
@@ -63,11 +72,17 @@ export default function NavBar(props) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-item nav-link">
-                    <Link to={join}> Join</Link>
-                  </a>
+                  <div class="dropdown show">
+                    <a class="btn nav-item nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ "color": "#26b0c2" }} >
+                      Register
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <Link class="dropdown-item" to={join}> As a Patient </Link>
+                      <Link class="dropdown-item" to={joinclinic}> As a Clinic </Link>
+                      <Link class="dropdown-item" to={joinworker}> As a Worker </Link>
+                    </div>
+                  </div>
                 </li>
-
               </ul>
             </div>
           </div>

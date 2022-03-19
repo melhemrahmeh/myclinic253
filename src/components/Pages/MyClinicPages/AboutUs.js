@@ -2,6 +2,7 @@ import About from "../../myclinic/About"
 import Header from "../../myclinic/Header.js"
 import NavBar from "../../myclinic/NavBar.js"
 import Footer from "../../myclinic/Footer.js"
+import React  from 'react'
 
 export default function AboutUs() {
 

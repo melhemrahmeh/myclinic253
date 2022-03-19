@@ -2,6 +2,7 @@ import Header from "../../myclinic/Header.js"
 import Footer from "../../myclinic/Footer.js"
 import NavBar from "../../myclinic/NavBar.js"
 import Team from "../../myclinic/Team.js"
+import React  from 'react'
 
 export default function TeamPage() {
     return (

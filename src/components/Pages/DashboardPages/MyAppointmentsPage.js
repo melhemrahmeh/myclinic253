@@ -1,14 +1,15 @@
-import Sidebar from "../../dashboard/Sidebar.js";
-import Navbar from "../../dashboard/Navbar.js";
+import SideBar from "../../dashboard/Bar/Sidebar.js";// import Navbar from "../../dashboard/Navbar.js";
 import Schedule from "../../schedule/Schedule.js"
+import ScrollButton from "../../Scrollbutton/ScrollButton.js"
 import React from 'react';
 
 export default function MyAppointments() {
     return (
         <div>
-            <Sidebar isMain={false} />
-            <Navbar />
+            {/* <NavBar/> */}
+            <SideBar />
             <Schedule />
+            <ScrollButton />
         </div>
     );
 }

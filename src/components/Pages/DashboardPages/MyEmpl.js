@@ -1,16 +1,15 @@
 import SideBar from "../../dashboard/Bar/Sidebar.js";// import Navbar from "../../dashboard/Navbar.js";
-import AddPatient from "../../forms/AddPatient.js"
 import ScrollButton from "../../Scrollbutton/ScrollButton.js"
-import React from 'react'
+import  MaterialTable from "../../tables/Material_Table.js"
 
+import React from 'react';
 
-export default function AddPatientPage() {
-
+export default function MyAppointments() {
     return (
         <div>
             {/* <NavBar/> */}
             <SideBar />
-            <AddPatient />
+            <MaterialTable/>
             <ScrollButton />
         </div>
     );

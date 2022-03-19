@@ -1,12 +1,12 @@
 import { Inject, ScheduleComponent, Day, Week, Month, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
-
+import React  from 'react'
 
 export default function Schedule() {
     return (
 
         <div>            
             < div style={{
-                "width": "80%", "height": "70%", "float": "right"
+                "width": "100%", "height": "90%", "float": "right", "color": "blue"
             }}>
                 <ScheduleComponent currentView='Month'>
                     <ViewsDirective>

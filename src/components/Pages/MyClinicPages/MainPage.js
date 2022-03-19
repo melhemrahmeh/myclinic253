@@ -3,6 +3,7 @@ import MainPageImage from "../../myclinic/MainPageImage.js"
 import NavBar from "../../myclinic/NavBar.js"
 import About from "../../myclinic/About.js"
 import Footer from "../../myclinic/Footer.js"
+import React  from 'react'
 
 export default function MainPage() {
     return (

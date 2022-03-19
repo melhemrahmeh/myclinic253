@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import React  from 'react'
 
 //TODO: adjust the price   9999.99$
 export default function Services() {

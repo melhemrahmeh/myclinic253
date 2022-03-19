@@ -1,16 +1,17 @@
 import Header from "../../myclinic/Header.js"
 import Footer from "../../myclinic/Footer.js"
 import NavBar from "../../myclinic/NavBar.js"
-import LoginForm from "../../forms/LoginForm.js"
-import React  from 'react'
+import SignUpPatient from "../../forms/SignUpPatient.js"
+import React from 'react'
 
-export default function Login() {
+
+export default function JoinPatient() {
 
     return (
         <div>
             <Header />
-            <NavBar isMain={false} />
-            <LoginForm />
+            <NavBar />
+            <SignUpPatient />
             <Footer isMain={false} isTeam={false} />
         </div>
     );

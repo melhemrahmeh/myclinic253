@@ -1,22 +1,29 @@
-import AboutUs from "./components/Pages/MyClinicPages/AboutUs.js"
-import MainPage from "./components/Pages/MyClinicPages/MainPage.js"
-import BookAppointment from "./components/Pages/MyClinicPages/BookAppointment.js"
-import OperationsPages from "./components/Pages/MyClinicPages/OperationsPage.js"
+import React from 'react'
+import { Routes, Route } from "react-router-dom"
+
+// importing from the dashboard pages
 import MyAppointments from "./components/Pages/DashboardPages/MyAppointmentsPage.js"
 import AfterVisitPage from "./components/Pages/DashboardPages/AfterVisitPage.js"
 import AddEmployeePage from "./components/Pages/DashboardPages/AddEmployeePage.js"
 import AddPatientPage from "./components/Pages/DashboardPages/AddPatientPage.js"
+import MainDash from "./components/Pages/DashboardPages/MainDash.js"
+import EmplTable from "./components/Pages/DashboardPages/MyEmpl.js"
+import PatientTable from "./components/Pages/DashboardPages/MyPatients.js"
+import Settings from  "./components/Pages/DashboardPages/Settings.js"
 
+// testing pages 
+import Test from "./components/Pages/DashboardPages/Test.js"
+
+// importing from my clinic pages
+import AboutUs from "./components/Pages/MyClinicPages/AboutUs.js"
 import TeamPage from "./components/Pages/MyClinicPages/TeamPage.js"
 import Login from "./components/Pages/MyClinicPages/Login.js"
-import Join from "./components/Pages/MyClinicPages/Join.js"
-import MyPatientsPage from "./components/Pages/DashboardPages/MyPatientsPage"
-import MyEmployeesPage from "./components/Pages/DashboardPages/MyPatientsPage"
-import UserProfilePage from "./components/Pages/DashboardPages/UserProfilePage"
-import Main from "./components/dashboard/Main.js"
-
-
-import { Routes, Route } from "react-router-dom"
+import BookAppointment from "./components/Pages/MyClinicPages/BookAppointment.js"
+import OperationsPages from "./components/Pages/MyClinicPages/OperationsPage.js"
+import JoinPatient from "./components/Pages/MyClinicPages/JoinPatient.js"
+import JoinWorker from "./components/Pages/MyClinicPages/JoinWorker.js"
+import JoinClinic from "./components/Pages/MyClinicPages/JoinDentist.js"
+import MainPage from "./components/Pages/MyClinicPages/MainPage.js"
 
 export default function App() {
   return (
@@ -28,16 +35,21 @@ export default function App() {
         <Route path="operations/" element={<OperationsPages />} />
         <Route path="team/" element={<TeamPage />} />
         <Route path="login/" element={<Login />} />
-        <Route path="join/" element={<Join />} />
+        <Route path="joinpatient/" element={<JoinPatient />} />
+        <Route path="joinworker/" element={<JoinWorker />} />
+        <Route path="joinclinic/" element={<JoinClinic />} />
 
         <Route path="aftervisit/" element={<AfterVisitPage />} />
         <Route path="addemployee/" element={<AddEmployeePage />} />
         <Route path="addpatient/" element={<AddPatientPage />} />
-        <Route path="myemployees/" element={<MyEmployeesPage />} />
-        <Route path="mypatients/" element={<MyPatientsPage />} />
-        <Route path="dashboard/" element={<Main />} />
+        <Route path="myemployees/" element={<EmplTable />} />
+        <Route path="mypatients/" element={<PatientTable />} />
+        <Route path="dashboard/" element={<MainDash />} />
         <Route path="myappointments/" element={<MyAppointments />} />
-        <Route path="user/" element={<UserProfilePage />} />
+        <Route path="profile/" element={<Settings />} />
+
+
+        <Route path="test/" element={<Test />} />
       </Routes>
     </div>
   );
