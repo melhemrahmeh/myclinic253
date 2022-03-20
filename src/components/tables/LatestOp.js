@@ -1,7 +1,9 @@
 import MaterialTable from "material-table";
 import React from 'react'
 
-export default function Material_Table() {
+export default function LatestOp(props) {
+    var is_admin = props.is_admin;
+
     const { useState } = React;
     const [selectedRow, setSelectedRow] = useState(null);
 
@@ -29,6 +31,7 @@ export default function Material_Table() {
         },
 
     ];
+    if (is_admin) { return <></>;}
     return (
         <MaterialTable
             title="Latest Visits"

@@ -8,7 +8,7 @@ import React from 'react';
 export default function UserProfilePage() { 
     return (
         <div>
-            <SideBar />
+            <SideBar is_dentist={true} is_admin={false} is_nurse={false} is_secretary={false} />
             <UserProfile />
             <UserProfileTable />
             <ScrollButton />

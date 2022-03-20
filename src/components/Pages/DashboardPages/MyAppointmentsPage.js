@@ -7,7 +7,7 @@ export default function MyAppointments() {
     return (
         <div>
             {/* <NavBar/> */}
-            <SideBar />
+            <SideBar is_dentist={true} is_admin={false} is_nurse={false} is_secretary={false} />
             <Schedule />
             <ScrollButton />
         </div>

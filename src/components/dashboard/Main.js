@@ -2,7 +2,23 @@ import styles from './styles.css';
 import { Link } from 'react-router-dom'
 import React from 'react'
 
-export default function Main() {
+export default function Main(props) {
+
+    var is_dentist = props.is_dentist;
+    var is_admin = props.is_admin;
+    var is_nurse = props.is_nurse;
+    var is_secretary = props.is_secretary;
+
+    var totalBalance = <></>
+    if (!is_admin && !is_nurse ) { 
+        totalBalance = <li>
+            <i className="bx bxs-dollar-circle" />
+            <span className="text">
+                <h3>$2543</h3>
+                <p>Total Balance</p>
+            </span>
+        </li>
+    }
     return (<>
         <section id="content">
             {/* <nav>
@@ -68,13 +84,7 @@ export default function Main() {
                                 <p>All Patient</p>
                             </span>
                         </li>
-                        <li>
-                            <i className="bx bxs-dollar-circle" />
-                            <span className="text">
-                                <h3>$2543</h3>
-                                <p>Total Balance</p>
-                            </span>
-                        </li>
+                        {totalBalance}
                     </ul>
 
                 </div>

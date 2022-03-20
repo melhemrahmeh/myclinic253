@@ -7,7 +7,7 @@ export default function AddEmployeePage() {
 
     return (
         <div>
-            <SideBar />
+            <SideBar is_dentist={true} is_admin={false} is_nurse={false} is_secretary={false}/>
             <AddEmployee />
             <ScrollButton />
         </div>

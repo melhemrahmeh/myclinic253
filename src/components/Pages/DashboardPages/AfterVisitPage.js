@@ -6,7 +6,7 @@ import React from 'react';
 export default function AfterVisitPage() {
     return (
         <div>
-            <SideBar />
+            <SideBar is_dentist={true} is_admin={false} is_nurse={false} is_secretary={false} />
             <AfterVisit />
             <ScrollButton />
         </div>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { SidebarData } from "./SidebarData";
+import SidebarData from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
@@ -43,7 +43,13 @@ const SidebarWrap = styled.div`
 width: 100%;
 `;
 
-const Sidebar = () => {
+function Sidebar(props) {
+	var is_dentist = props.is_dentist;
+	var is_admin = props.is_admin;
+	var is_nurse = props.is_nurse;
+	var is_secretary = props.is_secretary;
+
+	const data = SidebarData(is_dentist, is_admin, is_nurse, is_secretary);
 	const [sidebar, setSidebar] = useState(false);
 
 	const showSidebar = () => setSidebar(!sidebar);
@@ -92,7 +98,7 @@ const Sidebar = () => {
 						<NavIcon to="#">
 							<AiIcons.AiOutlineClose onClick={showSidebar} />
 						</NavIcon>
-						{SidebarData.map((item, index) => {
+						{data.map((item, index) => {
 							return <SubMenu item={item} key={index} />;
 						})}
 					</SidebarWrap>
