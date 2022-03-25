@@ -11,9 +11,8 @@ import EmplTable from "./components/Pages/DashboardPages/MyEmpl.js"
 import PatientTable from "./components/Pages/DashboardPages/MyPatients.js"
 import Settings from  "./components/Pages/DashboardPages/Settings.js"
 
-// testing pages 
-import Test from "./components/Pages/DashboardPages/Test.js"
-
+import AddOperationPage from "./components/Pages/DashboardPages/AddOperationsPage.js"
+import OperationsTable from "./components/Pages/DashboardPages/MyOperations.js"
 // importing from my clinic pages
 import AboutUs from "./components/Pages/MyClinicPages/AboutUs.js"
 import TeamPage from "./components/Pages/MyClinicPages/TeamPage.js"
@@ -25,6 +24,7 @@ import JoinWorker from "./components/Pages/MyClinicPages/JoinWorker.js"
 import JoinClinic from "./components/Pages/MyClinicPages/JoinDentist.js"
 import MainPage from "./components/Pages/MyClinicPages/MainPage.js"
 import UserProfilePage from './components/Pages/DashboardPages/UserProfilePage.js'
+import MeetTheTeamPage from "./components/Pages/MyClinicPages/MeetTheTeamPage.js"
 
 export default function App() {
   return (
@@ -39,7 +39,9 @@ export default function App() {
         <Route path="joinpatient/" element={<JoinPatient />} />
         <Route path="joinworker/" element={<JoinWorker />} />
         <Route path="joinclinic/" element={<JoinClinic />} />
+        <Route path="ourteam/" element={<MeetTheTeamPage />} />
 
+        
         <Route path="aftervisit/" element={<AfterVisitPage />} />
         <Route path="addemployee/" element={<AddEmployeePage />} />
         <Route path="addpatient/" element={<AddPatientPage />} />
@@ -49,9 +51,8 @@ export default function App() {
         <Route path="myappointments/" element={<MyAppointments />} />
         <Route path="profile/" element={<Settings />} />
         <Route path="user/" element={<UserProfilePage />} />
-
-        
-        <Route path="test/" element={<Test />} />
+        <Route path="addoperation/" element={<AddOperationPage />} />
+        <Route path="myoperations/" element={<OperationsTable />} />
       </Routes>
     </div>
   );

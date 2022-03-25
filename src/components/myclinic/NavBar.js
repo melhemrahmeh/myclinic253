@@ -9,6 +9,7 @@ export default function NavBar(props) {
   var joinworker;
   var joinclinic;
   var operations;
+  var dev;
   if (props.isMain) {
     team = "./team";
     about = "./about";
@@ -18,7 +19,7 @@ export default function NavBar(props) {
 
     joinworker = "./joinworker";
     joinclinic = "./joinclinic";
-
+    dev="./ourteam"
   } else {
     team = "../team";
     about = "../about";
@@ -28,6 +29,7 @@ export default function NavBar(props) {
 
     joinworker = "../joinworker";
     joinclinic = "../joinclinic";
+    dev = "../ourteam"
   }
 
   return (
@@ -64,6 +66,11 @@ export default function NavBar(props) {
                 <li className="nav-item">
                   <a className="nav-item nav-link ">
                     <Link to={about}> About Us</Link>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-item nav-link ">
+                    <Link to={dev}> Developers</Link>
                   </a>
                 </li>
                 <li className="nav-item">

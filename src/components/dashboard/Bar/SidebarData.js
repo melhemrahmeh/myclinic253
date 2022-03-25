@@ -4,6 +4,7 @@ import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
 import * as BiIcons from "react-icons/bi";
+import * as BsIcons from "react-icons/bs";
 
 
 export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary) { 
@@ -68,6 +69,27 @@ export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary
 				],
 			},
 			{
+				title: "Operations",
+				path: "",
+			
+				icon: <AiIcons.AiFillMedicineBox />,
+				iconClosed: <RiIcons.RiArrowDownSFill />,
+				iconOpened: <RiIcons.RiArrowUpSFill />,
+
+				subNav: [
+					{
+						title: "My Operations",
+						path: "/myoperations",
+						icon: <BsIcons.BsFileMedicalFill />,
+					},
+					{
+						title: "Add Operation",
+						path: "/addoperation",
+						icon: <FaIcons.FaBookMedical />,
+					},
+				],
+			},
+			{
 				title: "After Visit Summary",
 				path: "/aftervisit",
 				icon: <AiIcons.AiOutlineForm />,
@@ -76,17 +98,6 @@ export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary
 			{
 				title: "Settings",
 				path: "/profile",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
-
-			{
-				title: "Test",
-				path: "/test",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
-			{
-				title: "User Profile",
-				path: "/user",
 				icon: <IoIcons.IoMdHelpCircle />,
 			},
 			{
@@ -129,17 +140,6 @@ export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary
 			{
 				title: "Settings",
 				path: "/profile",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
-
-			{
-				title: "Test",
-				path: "/test",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
-			{
-				title: "User Profile",
-				path: "/user",
 				icon: <IoIcons.IoMdHelpCircle />,
 			},
 			{
@@ -187,17 +187,6 @@ export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary
 				path: "/profile",
 				icon: <IoIcons.IoMdHelpCircle />,
 			},
-
-			{
-				title: "Test",
-				path: "/test",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
-			{
-				title: "User Profile",
-				path: "/user",
-				icon: <IoIcons.IoMdHelpCircle />,
-			},
 			{
 				title: "Logout",
 				path: "/",
@@ -214,7 +203,6 @@ else if (is_nurse)
 			icon: <AiIcons.AiFillHome />,
 			iconClosed: <RiIcons.RiArrowDownSFill />,
 			iconOpened: <RiIcons.RiArrowUpSFill />,
-
 		},
 		{
 			title: "My Appointments",
@@ -242,6 +230,30 @@ else if (is_nurse)
 				},
 			],
 		},
+
+		{
+			title: "Operations",
+			path: "",
+
+			icon: <AiIcons.AiFillMedicineBox />,
+			iconClosed: <RiIcons.RiArrowDownSFill />,
+			iconOpened: <RiIcons.RiArrowUpSFill />,
+
+			subNav: [
+				{
+					title: "My Operations",
+					path: "/myoperations",
+					icon: <BsIcons.BsFileMedicalFill />,
+				},
+				{
+					title: "Add Operation",
+					path: "/addoperation",
+					icon: <FaIcons.FaBookMedical />,
+				},
+			],
+		},
+
+
 		{
 			title: "After Visit Summary",
 			path: "/aftervisit",
@@ -251,17 +263,6 @@ else if (is_nurse)
 		{
 			title: "Settings",
 			path: "/profile",
-			icon: <IoIcons.IoMdHelpCircle />,
-		},
-
-		{
-			title: "Test",
-			path: "/test",
-			icon: <IoIcons.IoMdHelpCircle />,
-		},
-		{
-			title: "User Profile",
-			path: "/user",
 			icon: <IoIcons.IoMdHelpCircle />,
 		},
 		{

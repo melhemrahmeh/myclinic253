@@ -2,72 +2,105 @@ import MaterialTable from "material-table";
 import React from 'react'
 
 export default function Material_Table() {
-    const { useState } = React;
-    const [selectedRow, setSelectedRow] = useState(null);
-
-    const data = [
-        { name: "John", email: "john@gmail.com", age: 12, gender: "Male" },
-        { name: "Bren", email: "bren@gmail.com", age: 24, gender: "Male" },
-        { name: "Marry", email: "marry@gmail.com", age: 18, gender: "Female" },
-        { name: "Shohail", email: "shohail@gmail.com", age: 25, gender: "Male" },
-        { name: "Aseka", email: "aseka@gmail.com", age: 19, gender: "Female" },
-        { name: "Meuko", email: "meuko@gmail.com", age: 12, gender: "Female" },
-    ];
-    const columns = [
-        
-        {
-            title: "Name",
-            field: "name",
-        },
-        {
-            title: "Email",
-            field: "email",
-        },
-        {
-            title: "Age",
-            field: "age",
-        },
-        {
-            title: "Gender",
-            field: "gender",
-        },
-        
-    ];
     return (
-        <MaterialTable
-            title="My Employees"
-            data={data}
-            columns={columns}
-            options={{search: true, paging: true, filtering: true,grouping: true, exportButton: true,
-                headerStyle: {
-                    backgroundColor: '#27c4d3',
-                    color: '#FFF'
-                },
-                rowStyle: rowData => ({
-                    backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
-                }) }
-            }
-            actions={[
-                {
-                    icon: 'save',
-                    tooltip: 'Save User',
-                    onClick: (event, rowData) => alert("You saved " + rowData.name)
-                },
-                {
-                    icon: 'delete',
-                    tooltip: 'Delete User',
-                    onClick: (event, rowData) => alert("You want to delete " + rowData.name)
-                }
-            ]}
-            cellEditable={{
-                cellStyle: {},
-                onCellEditApproved: (newValue, oldValue, rowData, columnDef) => {
-                    return new Promise((resolve, reject) => {
-                        console.log('newValue: ' + newValue);
-                        setTimeout(resolve, 4000);
-                    });
-                }
-            }}
-        />
+        <>
+            <br />
+            <div class="container">
+                <div class="panel-heading">
+                    <h1 style={{ "margin": "auto" }}>My Employees</h1>
+                    <br />
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style={{ 'color': "#535356"}}>Name</th>
+                                <th style={{ 'color': "#535356"}}>Email</th>
+                                <th style={{ 'color': "#535356"}}>Phone Number</th>
+                                <th style={{ 'color': "#535356"}}>Position</th>
+                                <th style={{ 'color': "#535356" }}>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                                <td style={{ 'color': "#5D5C63" }}>Melhem Rahmeh</td>
+                                <td style={{ 'color': "#5D5C63" }}>melhem.rahmehh@gmail.com</td>
+                                <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
+                                <td style={{ 'color': "#5D5C63" }}>Administrator</td>
+                                <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-info">Edit</button>   or   <button type="button" class="btn btn-danger">Delete</button></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="demo1">
+                                        <h5>Melhem Rahmeh's Information</h5>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th style={{ 'color': "#5D5C63" }}>Employment Type</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Salary</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Address</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Age</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr data-toggle="collapse" class="accordion-toggle">
+                                                    <td style={{ 'color': "#5D5D60" }}>Full Time</td>
+                                                    <td style={{ 'color': "#5D5D60" }}> 1000$ </td>
+                                                    <td style={{ 'color': "#5D5D60" }}> Byblos </td>
+                                                    <td style={{ 'color': "#5D5D60" }}> 20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+                                <td style={{ 'color': "#5D5C63" }}>Melhem Rahmeh</td>
+                                <td style={{ 'color': "#5D5C63" }}>melhem.rahmehh@gmail.com</td>
+                                <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
+                                <td style={{ 'color': "#5D5C63" }}>Administrator</td>
+                                <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-info">Edit</button> or  <button type="button" class="btn btn-danger">Delete</button></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="demo2">
+                                        <h5>Melhem Rahmeh's Information</h5>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th style={{ 'color': "#5D5C63" }}>Employment Type</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Salary</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Address</th>
+                                                    <th style={{ 'color': "#5D5C63" }}>Age</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr data-toggle="collapse" class="accordion-toggle">
+                                                    <td style={{ 'color': "#5D5D60" }}>Full Time</td>
+                                                    <td style={{ 'color': "#5D5D60" }}> 1000$ </td>
+                                                    <td style={{ 'color': "#5D5D60" }}> Byblos </td>
+                                                    <td style={{ 'color': "#5D5D60" }}> 20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </>
     );
+
 }
