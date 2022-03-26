@@ -19,7 +19,7 @@ export default function Appointment() {
           <div className="col-lg-6">
             <div className="bg-white text-center rounded p-5">
               <h1 className="mb-4">Book An Appointment</h1>
-              <h5>New? Create an account <Link to={"/join"}>here</Link></h5>
+              <h5>New? Create an account <Link to={"/joinpatient"}>here</Link></h5>
               <br />
               <form>
                 <div className="row g-3">
@@ -42,12 +42,14 @@ export default function Appointment() {
                   </div>
                   <div className="col-12 col-sm-6">
                     <div className="date" id="date" data-target-input="nearest">
-                      <input type="date" value="2017-06-01" className="form-control bg-light border-0 datetimepicker-input" data-target="#date" data-toggle="datetimepicker" style={{ height: '55px' }} />
+                      <label for="date"> Date</label>
+                      <input type="date" className="form-control bg-light border-0 datetimepicker-input" data-target="#date" data-toggle="datetimepicker" style={{ height: '55px' }} />
                     </div>
                   </div>
                   <div className="col-12 col-sm-6">
                     <div className="time" id="time" data-target-input="nearest">
-                      <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }} value="09:00" />
+                      <label for="date"> Time</label>
+                      <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }}/>
                     </div>
                   </div>
                   <div className="col-12">

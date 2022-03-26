@@ -1,7 +1,13 @@
 import MaterialTable from "material-table";
 import React from 'react'
+import PopupAppointment from "../forms/PopupAppointment";
+import { useState } from "react";
+import PopupPatient from "../forms/PopupPatient";
 
 export default function PatientTable() {
+
+    const [buttonPopup, setButtonPopup] = useState(false);
+    const [EditPopup, setEditPopup] = useState(false);
 
     return (
         <>
@@ -32,12 +38,92 @@ export default function PatientTable() {
                                 <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
                                 <td style={{ 'color': "#5D5C63" }}>100$</td>
                                 <td style={{ 'color': "#5D5C63" }}>6</td>
-                                <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-info">Edit</button> or  <button type="button" class="btn btn-danger">Delete</button></td>
-                            </tr>
+                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
 
+
+                                <br />
+                                <PopupPatient trigger={EditPopup} setTrigger={setEditPopup}>
+                                    <div className="container-fluid bg-primary my-5 py-5">
+                                        <div className="col-lg-6" style={{ "width": "100%", "margin": "auto" }}>
+                                            <div className="bg-white text-center rounded p-5">
+                                                <h1 className="mb-4">Edit Patient</h1>
+                                                <br />
+                                                <form>
+                                                    <div className="row g-3">
+                                                        <div className="col-12 col-sm-6">
+                                                            <label for="date"> Name</label>
+                                                            <input type="text" className="form-control bg-light border-0" placeholder="Operation Name" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12 col-sm-6">
+                                                            <label for="date"> Amount Due</label>
+                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12 col-sm-6" >
+                                                            <label for="myfile"> Number of Operations Done</label>
+                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12" >
+                                                            <button className="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </PopupPatient>
+                                <br />
+                            </tr>
                             <tr>
                                 <td colspan="12" class="hiddenRow">
                                     <div class="accordian-body collapse" id="demo1">
+
+                                        <br />
+                                        <button type="button" class="btn btn-info" onClick={() => setButtonPopup(true)}>Add Appointment</button><br />
+                                        <PopupAppointment trigger={buttonPopup} setTrigger={setButtonPopup}>
+                                            <div className="container-fluid bg-primary my-5 py-5">
+                                                <div className="container py-5" style={{ "width": "100%", "alignItems": "center" }}>
+                                                    <div className="row gx-5" style={{ "margin": "auto" }}>
+                                                        <div className="col-lg-6" style={{ "width": "70%", "margin": "auto" }}>
+                                                            <div className="bg-white text-center rounded p-5">
+                                                                <h1 className="mb-4">Add Appointment</h1>
+                                                                <br />
+                                                                <form>
+                                                                    <div className="row g-3">
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <select className="form-select bg-light border-0" style={{ height: '55px' }}>
+                                                                                <option selected>Select Operation</option>
+                                                                                <option value={1}>Operation 1</option>
+                                                                                <option value={2}>Operation 2</option>
+                                                                                <option value={3}>Operation 3</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <div className="date" id="date" data-target-input="nearest">
+                                                                                <input type="date" value="2017-06-01" className="form-control bg-light border-0 datetimepicker-input" data-target="#date" data-toggle="datetimepicker" style={{ height: '55px' }} />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <div className="time" id="time" data-target-input="nearest">
+                                                                                <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }} value="09:00" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                        </div>
+                                                                        <div className="col-12" >
+                                                                            <button className="btn btn-primary w-100 py-3" type="submit">Book</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </PopupAppointment>
+                                        <br />
+
+
                                         <h5>Melhem Rahmeh's Visits</h5>
                                         <table class="table table-striped">
                                             <thead>
@@ -91,12 +177,94 @@ export default function PatientTable() {
                                 <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
                                 <td style={{ 'color': "#5D5C63" }}>100$</td>
                                 <td style={{ 'color': "#5D5C63" }}>6</td>
-                                <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-info">Edit</button> or  <button type="button" class="btn btn-danger">Delete</button></td>
+                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
+
+                                <br />
+                                <PopupPatient trigger={EditPopup} setTrigger={setEditPopup}>
+                                    <div className="container-fluid bg-primary my-5 py-5">
+                                        <div className="col-lg-6" style={{ "width": "100%", "margin": "auto" }}>
+                                            <div className="bg-white text-center rounded p-5">
+                                                <h1 className="mb-4">Edit Patient</h1>
+                                                <br />
+                                                <form>
+                                                    <div className="row g-3">
+                                                        <div className="col-12 col-sm-6">
+                                                            <label for="date"> Name</label>
+                                                            <input type="text" className="form-control bg-light border-0" placeholder="Operation Name" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12 col-sm-6">
+                                                            <label for="date"> Amount Due</label>
+                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12 col-sm-6" >
+                                                            <label for="myfile"> Number of Operations Done</label>
+                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12" >
+                                                            <button className="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </PopupPatient>
+                                <br />
+
+
+
+
                             </tr>
 
                             <tr>
                                 <td colspan="12" class="hiddenRow">
                                     <div class="accordian-body collapse" id="demo2">
+                                        <br />
+                                        <button type="button" class="btn btn-info" onClick={() => setButtonPopup(true)}>Add Appointment</button><br />
+                                        <PopupAppointment trigger={buttonPopup} setTrigger={setButtonPopup}>
+                                            <div className="container-fluid bg-primary my-5 py-5">
+                                                <div className="container py-5" style={{ "width": "100%", "alignItems": "center" }}>
+                                                    <div className="row gx-5" style={{ "margin": "auto" }}>
+                                                        <div className="col-lg-6" style={{ "width": "70%", "margin": "auto" }}>
+                                                            <div className="bg-white text-center rounded p-5">
+                                                                <h1 className="mb-4">Add Appointment</h1>
+                                                                <br />
+                                                                <form>
+                                                                    <div className="row g-3">
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <select className="form-select bg-light border-0" style={{ height: '55px' }}>
+                                                                                <option selected>Select Operation</option>
+                                                                                <option value={1}>Operation 1</option>
+                                                                                <option value={2}>Operation 2</option>
+                                                                                <option value={3}>Operation 3</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <div className="date" id="date" data-target-input="nearest">
+                                                                                <input type="date" value="2017-06-01" className="form-control bg-light border-0 datetimepicker-input" data-target="#date" data-toggle="datetimepicker" style={{ height: '55px' }} />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                            <div className="time" id="time" data-target-input="nearest">
+                                                                                <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }} value="09:00" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="col-12 col-sm-6">
+                                                                        </div>
+                                                                        <div className="col-12" >
+                                                                            <button className="btn btn-primary w-100 py-3" type="submit">Book</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </PopupAppointment>
+                                        <br />
+
                                         <h5>Melhem Rahmeh's Visits</h5>
                                         <table class="table table-striped">
                                             <thead>

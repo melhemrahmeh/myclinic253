@@ -65,6 +65,7 @@ function Sidebar(props) {
 
 						<h1
 							style={{
+								margin:"auto",
 								textAlign: "center",
 								marginLeft: "-50px",
 								marginTop: "20px",

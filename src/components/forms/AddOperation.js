@@ -28,9 +28,8 @@ export default function AddEmployee() {
                                     </div>
                                     <div className="col-12" style={{ "width": "70%", "margin": "auto" }}>
                                         <br /><br /><br />
-                                        <button className="btn btn-primary w-100 py-3" type="submit">Add Patient</button>
+                                        <button className="btn btn-primary w-100 py-3" type="submit">Add Operation</button>
                                     </div>
-
                                 </div>
                             </form>
                         </div>

@@ -1,4 +1,4 @@
-import SideBar from "../../dashboard/Bar/Sidebar.js";// import Navbar from "../../dashboard/Navbar.js";
+import SideBar from "../../dashboard/Bar/Sidebar.js";
 import ScrollButton from "../../Scrollbutton/ScrollButton.js"
 import ClinicOperation from "../../tables/ClinicOperation.js"
 
