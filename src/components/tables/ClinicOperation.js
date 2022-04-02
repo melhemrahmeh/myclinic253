@@ -13,7 +13,7 @@ export default function ClinicOperation() {
                     <h1 style={{ "margin": "auto" }}>My Operations</h1>
                     <br />
                 </div>
-                <div class="panel-body">
+                <div class="panel-body table-responsive-sm">
                     <table class="table table-striped">
                         <thead>
                             <tr>

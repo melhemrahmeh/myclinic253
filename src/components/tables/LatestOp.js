@@ -12,7 +12,7 @@ export default function LatestOp(props) {
                     <h1 style={{ "margin": "auto" }}>Latest Visits</h1>
                     <br />
                 </div>
-                <div class="panel-body">
+                <div class="panel-body table-responsive-sm">
                     <table class="table table-striped">
                         <thead>
                             <tr>

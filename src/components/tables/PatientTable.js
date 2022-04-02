@@ -17,7 +17,7 @@ export default function PatientTable() {
                     <h1 style={{ "margin": "auto" }}>My Patients</h1>
                     <br />
                 </div>
-                <div class="panel-body">
+                <div class="panel-body table-responsive-sm">
                     <table class="table table-striped">
                         <thead>
                             <tr>

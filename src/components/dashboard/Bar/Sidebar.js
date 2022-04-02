@@ -13,7 +13,6 @@ height: 80px;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-
 `;
 
 const NavIcon = styled(Link)`
@@ -74,24 +73,6 @@ function Sidebar(props) {
 						>
 							MyClinic
 						</h1>
-
-						{/* 
-						// <nav>
-							<form action="#">
-								<div className="form-input">
-									<input type="search" placeholder="Search..." />
-									<button type="submit" className="search-btn">
-										<i className="bx bx-search" />
-									</button>
-								</div>
-							</form>
-							<input type="checkbox" id="switch-mode" hidden="" />
-							<label htmlFor="switch-mode" className="switch-mode" />
-
-							<a href="#" className="profile">
-								<img src="assets/dashboard/img/people.png" alt=""/>
-							</a>
-						// </nav>*/}
 					</section>
 				</Nav>
 				<SidebarNav sidebar={sidebar}>

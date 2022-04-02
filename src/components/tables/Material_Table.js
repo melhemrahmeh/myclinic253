@@ -12,7 +12,7 @@ export default function Material_Table() {
                     <h1 style={{ "margin": "auto" }}>My Employees</h1>
                     <br />
                 </div>
-                <div class="panel-body">
+                <div class="panel-body table-responsive-sm">
                     <table class="table table-striped">
                         <thead>
                             <tr>
