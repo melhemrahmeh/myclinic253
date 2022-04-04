@@ -27,7 +27,6 @@ export default function PatientTable() {
                                 <th style={{ 'color': "#535356" }}>Total Amount Due</th>
                                 <th style={{ 'color': "#535356" }}>Number of Operations Done</th>
                                 <th style={{ 'color': "#535356" }}>Actions</th>
-
                             </tr>
                         </thead>
 
@@ -38,7 +37,7 @@ export default function PatientTable() {
                                 <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
                                 <td style={{ 'color': "#5D5C63" }}>100$</td>
                                 <td style={{ 'color': "#5D5C63" }}>6</td>
-                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
+                                <td style={{ 'color': "#5D5C63" }}><button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
 
 
                                 <br />
