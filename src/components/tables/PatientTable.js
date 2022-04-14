@@ -3,9 +3,15 @@ import React from 'react'
 import PopupAppointment from "../forms/PopupAppointment";
 import { useState } from "react";
 import PopupPatient from "../forms/PopupPatient";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function PatientTable() {
 
+    const notify = () => toast("Operation Deleted!");
+    const notify2 = () => toast("Operation Edited!");
+    const notify3 = () => toast("Successfully Booked!");
     const [buttonPopup, setButtonPopup] = useState(false);
     const [EditPopup, setEditPopup] = useState(false);
 
@@ -27,7 +33,6 @@ export default function PatientTable() {
                                 <th style={{ 'color': "#535356" }}>Total Amount Due</th>
                                 <th style={{ 'color': "#535356" }}>Number of Operations Done</th>
                                 <th style={{ 'color': "#535356" }}>Actions</th>
-
                             </tr>
                         </thead>
 
@@ -38,7 +43,7 @@ export default function PatientTable() {
                                 <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
                                 <td style={{ 'color': "#5D5C63" }}>100$</td>
                                 <td style={{ 'color': "#5D5C63" }}>6</td>
-                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
+                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Add Visit Summary</button> </td>
 
 
                                 <br />
@@ -46,25 +51,24 @@ export default function PatientTable() {
                                     <div className="container-fluid bg-primary my-5 py-5">
                                         <div className="col-lg-6" style={{ "width": "100%", "margin": "auto" }}>
                                             <div className="bg-white text-center rounded p-5">
-                                                <h1 className="mb-4">Edit Patient</h1>
+                                                <h1 className="mb-4">Edit Operation</h1>
                                                 <br />
                                                 <form>
                                                     <div className="row g-3">
                                                         <div className="col-12 col-sm-6">
-                                                            <label for="date"> Name</label>
+                                                            <label for="date"> Operation Name</label>
                                                             <input type="text" className="form-control bg-light border-0" placeholder="Operation Name" style={{ height: '55px' }} />
+                                                        </div>
+                                                        <div className="col-12 col-sm-6">
+                                                            <label for="date"> Amount Paid</label>
+                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
                                                         </div>
                                                         <div className="col-12 col-sm-6">
                                                             <label for="date"> Amount Due</label>
                                                             <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
                                                         </div>
-                                                        <div className="col-12 col-sm-6" >
-                                                            <label for="myfile"> Number of Operations Done</label>
-                                                            <input type="number" className="form-control bg-light border-0" placeholder="Operation Price" step="1" min="0" max="1000" style={{ height: '55px' }} />
-                                                        </div>
                                                         <div className="col-12" >
-                                                            <button className="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                                        </div>
+                                                        <button class="btn btn-primary w-100 py-3" onClick={notify2}>Submit</button>                                                         </div>
 
                                                     </div>
                                                 </form>
@@ -74,6 +78,7 @@ export default function PatientTable() {
                                 </PopupPatient>
                                 <br />
                             </tr>
+
                             <tr>
                                 <td colspan="12" class="hiddenRow">
                                     <div class="accordian-body collapse" id="demo1">
@@ -111,9 +116,9 @@ export default function PatientTable() {
                                                                         <div className="col-12 col-sm-6">
                                                                         </div>
                                                                         <div className="col-12" >
-                                                                            <button className="btn btn-primary w-100 py-3" type="submit">Book</button>
+                                                                        <button class="btn btn-primary w-100 py-3" onClick={notify3}>Book</button>                                                         </div>
                                                                         </div>
-                                                                    </div>
+                                                                
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -134,6 +139,8 @@ export default function PatientTable() {
                                                     <th style={{ 'color': "#5D5C63" }}>Amount Paid</th>
                                                     <th style={{ 'color': "#5D5C63" }}>Amount Due</th>
                                                     <th style={{ 'color': "#5D5C63" }}>Summary</th>
+                                                    <th style={{ 'color': "#5D5C63" }}></th>
+
                                                 </tr>
                                             </thead>
 
@@ -146,23 +153,11 @@ export default function PatientTable() {
                                                     <td style={{ 'color': "#5D5D60" }}> 100$ </td>
                                                     <td style={{ 'color': "#5D5D60" }}> 0$</td>
                                                     <td style={{ 'color': "#5D5D60" }}><i class='bx bxs-file-pdf' style={{ "font-size": "25px" }}></i>After Visit Summary</td>
+                                                    <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button> </td>
+                                               <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-warning" onClick={notify}>Delete</button><ToastContainer /> </td>
+
                                                 </tr>
-                                                <tr data-toggle="collapse" class="accordion-toggle">
-                                                    <td style={{ 'color': "#5D5D60" }}>2016/09/27</td>
-                                                    <td style={{ 'color': "#5D5D60" }}>Root Canal</td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 100$ </td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 100$ </td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 0$</td>
-                                                    <td style={{ 'color': "#5D5D60" }}><i class='bx bxs-file-pdf' style={{ "font-size": "25px" }}></i>After Visit Summary</td>
-                                                </tr>
-                                                <tr data-toggle="collapse" class="accordion-toggle">
-                                                    <td style={{ 'color': "#5D5D60" }}>2016/09/27</td>
-                                                    <td style={{ 'color': "#5D5D60" }}>Root Canal</td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 100$ </td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 100$ </td>
-                                                    <td style={{ 'color': "#5D5D60" }}> 0$</td>
-                                                    <td style={{ 'color': "#5D5D60" }}><i class='bx bxs-file-pdf' style={{ "font-size": "25px" }}></i>After Visit Summary</td>
-                                                </tr>
+                                 
                                             </tbody>
                                         </table>
 
@@ -170,14 +165,16 @@ export default function PatientTable() {
                                 </td>
                             </tr>
 
-
+{/* 
                             <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
                                 <td style={{ 'color': "#5D5C63" }}>Melhem Rahmeh</td>
                                 <td style={{ 'color': "#5D5C63" }}>melhem.rahmehh@gmail.com</td>
                                 <td style={{ 'color': "#5D5C63" }}>71 589 832</td>
                                 <td style={{ 'color': "#5D5C63" }}>100$</td>
                                 <td style={{ 'color': "#5D5C63" }}>6</td>
-                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button></td>
+                                <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Add Visit Summary</button> </td>
+
+                                 <button type="button" class="btn btn-info" onClick={() => setEditPopup(true)}>Edit</button>  or  <button type="button" class="btn btn-danger">Delete</button>
 
                                 <br />
                                 <PopupPatient trigger={EditPopup} setTrigger={setEditPopup}>
@@ -306,8 +303,8 @@ export default function PatientTable() {
                                             </tbody>
                                         </table>
                                     </div>
-                                </td>
-                            </tr>
+                                </td> 
+                            </tr>*/}
                         </tbody>
                     </table>
                 </div>

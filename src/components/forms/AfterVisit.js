@@ -7,7 +7,7 @@ export default function AfterVisit() {
                 <div className="row gx-5" style={{ "margin": "auto" }}>
                     <div className="col-lg-6" style={{ "width": "70%", "margin": "auto" }}>
                         <div className="bg-white text-center rounded p-5">
-                            <h1 className="mb-4">After Visit Summary</h1>
+                            <h1 className="mb-4">Visit Summary</h1>
                             <br />
                             <form>
                                 <div className="row g-3">

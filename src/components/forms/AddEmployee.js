@@ -26,7 +26,7 @@ export default function AddPatient() {
                                     <div className="col-12 col-sm-6">
                                         <label for="myfile"> Sex</label>
                                         <select className="form-select bg-light border-0" style={{ height: '55px' }}>
-                                            <option selected>Select Sex</option>
+                                            <option selected>Select Gender</option>
                                             <option value="Broken Tooth"> Female </option>
                                             <option value="Brushing"> Male </option>
                                             <option value="Check-Up"> N/A </option>

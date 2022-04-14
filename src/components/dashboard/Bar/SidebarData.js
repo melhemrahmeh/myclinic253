@@ -90,7 +90,7 @@ export default function SidebarData(is_dentist, is_admin, is_nurse, is_secretary
 				],
 			},
 			{
-				title: "After Visit Summary",
+				title: "Visit Summary",
 				path: "/aftervisit",
 				icon: <AiIcons.AiOutlineForm />,
 			},
