@@ -107,7 +107,7 @@ export default function EmplTable() {
                                                     <th style={{ 'color': "#5D5C63" }}></th> 
                                                     <th style={{ 'color': "#5D5C63" }}></th> 
 
-                                               </tr>
+                                                </tr>
                                             </thead>
 
                                             <tbody>
@@ -120,7 +120,7 @@ export default function EmplTable() {
                                                     <td style={{ 'color': "#5D5D60" }}> 09 130 922</td>
 
                                                     <td style={{ 'color': "#5D5C63" }}>  <button type="button" class="btn btn-info" onClick={() => setButtonPopup(true) }>Edit</button> </td>
-                                               <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-warning" onClick={notify}>Delete</button><ToastContainer /> </td>
+                                                    <td style={{ 'color': "#5D5C63" }}> <button type="button" class="btn btn-warning" onClick={notify}>Delete</button><ToastContainer /> </td>
 
                                                 </tr>
                                             </tbody>
