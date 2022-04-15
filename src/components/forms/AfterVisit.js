@@ -1,5 +1,5 @@
 import React from 'react'
-import AutoComplete from "../../Autocomplete/AutoComplete";
+import AutoComplete from "../Autocomplete/AutoComplete";
 
 {/* <div>
 <Autocomplete suggestions={"Oranges", "Apples", "Banana", "Kiwi", "Mango"]}/>
