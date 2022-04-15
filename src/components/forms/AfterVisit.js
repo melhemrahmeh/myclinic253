@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OperationsFormVisit from '../tables/OperationsFormVisit'
+
 
 import AutoComplete from "../../Autocomplete/AutoComplete";
 import PopUpMultipleOps from './PopUpMultipleOps.js'
@@ -79,7 +81,7 @@ export default function AfterVisit() {
                                         </div>
                                     </div>
 
-
+                                    <OperationsFormVisit></OperationsFormVisit>
                                     <div className="col-12 col-sm-12">
                                         <div className="date" id="date" data-target-input="nearest">
                                             Total Amount Due:
@@ -99,7 +101,7 @@ export default function AfterVisit() {
 
                                             <div >
                                                 <br />
-                                                <label for="myfile"> Please upload file needed, if needed</label>
+                                                <label for="myfile"> Please upload files, if needed</label>
                                                 <input type="file" id="myfile" name="myfile" className="form-control bg-light border-0" />
                                             </div>
 
