@@ -1,4 +1,10 @@
-import React  from 'react'
+import React from 'react'
+import AutoComplete from "../../Autocomplete/AutoComplete";
+
+{/* <div>
+<Autocomplete suggestions={"Oranges", "Apples", "Banana", "Kiwi", "Mango"]}/>
+</div> */}
+
 
 export default function AfterVisit() {
     return (
