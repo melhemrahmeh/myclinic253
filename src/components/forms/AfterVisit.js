@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OperationsFormVisit from '../tables/OperationsFormVisit'
+import ReactDOMServer from "react-dom/server";
+import jsPDF from "jspdf";
 
 
 // import AutoComplete from "../../Autocomplete/AutoComplete";
@@ -17,7 +19,19 @@ export default function AfterVisit() {
 
     const [buttonPopup, setButtonPopup] = useState(false);
     const notify = () => toast("Summary added!");
+    const doc = new jsPDF();
 
+    // change this to be incremented as the detals are added in the form 
+    const PatientInfo = <b>...</b>;
+
+
+    const save = () => { // change here to make the name of the visit anb and patient name
+        doc.html(ReactDOMServer.renderToStaticMarkup(PatientInfo), {
+            callback: () => {
+                doc.save("myDocument1.pdf");
+            }
+        });
+    };
 
     return (
         <div className="container-fluid bg-primary my-5 py-5">
@@ -50,26 +64,9 @@ export default function AfterVisit() {
                                     <div className="col-12 col-sm-6">
                                     </div>
                                     <div className="col-12 col-sm-6">
-                                        
+
                                         <br /> <br />
-                                        {/* <label for="myfile"> Operation</label>
-                                        <select className="form-select bg-light border-0" style={{ height: '55px' }}>
-                                            <option selected>Select Operation</option>
-                                            <option value="Broken Tooth"> Broken Tooth </option>
-                                            <option value="Brushing"> Brushing </option>
-                                            <option value="Check-Up"> Check-Up </option>
-                                            <option value="Dental Implants"> Dental Implants </option>
-                                            <option value="Dental Caries"> Dental Caries </option>
-                                            <option value="Diagnostics"> Diagnostics </option>
-                                            <option value="Endodontics"> Endodontics </option>
-                                            <option value="Extraction"> Extraction </option>
-                                            <option value="Gum Treatment"> Gum Treatment </option>
-                                            <option value="Odontogenic Cyst"> Odontogenic Cyst </option>
-                                            <option value="Orthodontics"> Orthodontics </option>
-                                            <option value="Osteoplasty"> Osteoplasty </option>
-                                            <option value="Root Canal"> Root Canal </option>
-                                            <option value="Whitening"> Whitening </option>
-                                        </select> */}
+
 
                                     </div>
                                     <div className="col-12 col-sm-6">
@@ -110,7 +107,7 @@ export default function AfterVisit() {
                                         <div className="col-12" style={{ "width": "70%", "margin": "auto" }}>
                                             <br /><br />
 
-                                            <button type="submit" class="btn btn-primary w-100 py-3" onClick={notify}>Send</button><ToastContainer />
+                                            <button type="submit" class="btn btn-primary w-100 py-3" onClick={() => { notify(); save(); }}>Save</button><ToastContainer />
 
 
                                         </div>

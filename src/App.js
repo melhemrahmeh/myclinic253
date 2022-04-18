@@ -24,7 +24,6 @@ import JoinWorker from "./components/Pages/MyClinicPages/JoinWorker.js"
 import JoinClinic from "./components/Pages/MyClinicPages/JoinDentist.js"
 import MainPage from "./components/Pages/MyClinicPages/MainPage.js"
 import UserProfilePage from './components/Pages/DashboardPages/UserProfilePage.js'
-import MeetTheTeamPage from "./components/Pages/MyClinicPages/MeetTheTeamPage.js"
 
 export default function App() {
   return (
@@ -39,7 +38,6 @@ export default function App() {
         <Route path="joinpatient/" element={<JoinPatient />} />
         <Route path="joinworker/" element={<JoinWorker />} />
         <Route path="joinclinic/" element={<JoinClinic />} />
-        <Route path="ourteam/" element={<MeetTheTeamPage />} />
 
         
         <Route path="aftervisit/" element={<AfterVisitPage />} />

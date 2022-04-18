@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import React  from 'react'
+import React from 'react'
 
 export default function Appointment() {
   return (
@@ -34,10 +34,27 @@ export default function Appointment() {
                   </div>
                   <div className="col-12 col-sm-6">
                     <select className="form-select bg-light border-0" style={{ height: '55px' }}>
-                      <option selected>Select Operation</option>
-                      <option value={1}>Operation 1</option>
-                      <option value={2}>Operation 2</option>
-                      <option value={3}>Operation 3</option>
+                      <select className="form-select bg-light border-0" >
+                        <ul class="dropdown-menu">
+
+                          <option selected>Select Operation</option>
+                          <option value="Broken Tooth"> Broken Tooth </option>
+                          <option value="Brushing"> Brushing </option>
+                          <option value="Check-Up"> Check-Up </option>
+                          <option value="Dental Implants"> Dental Implants </option>
+                          <option value="Dental Caries"> Dental Caries </option>
+                          <option value="Diagnostics"> Diagnostics </option>
+                          <option value="Endodontics"> Endodontics </option>
+                          <option value="Extraction"> Extraction </option>
+                          <option value="Gum Treatment"> Gum Treatment </option>
+                          <option value="Odontogenic Cyst"> Odontogenic Cyst </option>
+                          <option value="Orthodontics"> Orthodontics </option>
+                          <option value="Osteoplasty"> Osteoplasty </option>
+                          <option value="Root Canal"> Root Canal </option>
+                          <option value="Whitening"> Whitening </option>
+
+                        </ul>
+                      </select>
                     </select>
                   </div>
                   <div className="col-12 col-sm-6">
@@ -49,7 +66,7 @@ export default function Appointment() {
                   <div className="col-12 col-sm-6">
                     <div className="time" id="time" data-target-input="nearest">
                       <label for="date"> Time</label>
-                      <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }}/>
+                      <input type="time" id="appt" name="appt" className="form-control bg-light border-0 datetimepicker-input" data-target="#time" data-toggle="datetimepicker" style={{ height: '55px' }} />
                     </div>
                   </div>
                   <div className="col-12">

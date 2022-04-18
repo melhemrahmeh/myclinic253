@@ -41,7 +41,7 @@ export default function NavBar(props) {
             <img src="assets/img/logo_1.jpeg" class="img-fluid" alt="Responsive image" style={{
               objectFit: 'cover',
               width: '65%',
-              height: '7%'
+              height: '5%'
             }} />
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,11 +72,6 @@ export default function NavBar(props) {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-item nav-link ">
-                    <Link to={dev}> Developers</Link>
-                  </a>
-                </li>
-                <li className="nav-item">
                   <a className="nav-item nav-link">
                     <Link to={login}> Log in</Link>
                   </a>
@@ -88,8 +83,8 @@ export default function NavBar(props) {
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <Link class="dropdown-item" to={join}> As a Patient </Link>
-                      <Link class="dropdown-item" to={joinclinic}> As a Clinic </Link>
-                      <Link class="dropdown-item" to={joinworker}> As a Worker </Link>
+                      <Link class="dropdown-item" to={joinclinic}> As a Clinic/Dr </Link>
+                      <Link class="dropdown-item" to={joinworker}> As an Employee </Link>
                     </div>
                   </div>
                 </li>

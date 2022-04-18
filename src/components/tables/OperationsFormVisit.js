@@ -34,9 +34,23 @@ export default function OperationsFormVisit(props) {
                                     <div class="dropdown">
                                         <select className="form-select bg-light border-0" >
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">Root Canal</a></li>
-                                                <li><a href="#">Whitening</a></li>
-                                                <li><a href="#">...</a></li>
+
+                                                <option selected>Select Operation</option>
+                                                <option value="Broken Tooth"> Broken Tooth </option>
+                                                <option value="Brushing"> Brushing </option>
+                                                <option value="Check-Up"> Check-Up </option>
+                                                <option value="Dental Implants"> Dental Implants </option>
+                                                <option value="Dental Caries"> Dental Caries </option>
+                                                <option value="Diagnostics"> Diagnostics </option>
+                                                <option value="Endodontics"> Endodontics </option>
+                                                <option value="Extraction"> Extraction </option>
+                                                <option value="Gum Treatment"> Gum Treatment </option>
+                                                <option value="Odontogenic Cyst"> Odontogenic Cyst </option>
+                                                <option value="Orthodontics"> Orthodontics </option>
+                                                <option value="Osteoplasty"> Osteoplasty </option>
+                                                <option value="Root Canal"> Root Canal </option>
+                                                <option value="Whitening"> Whitening </option>
+
                                             </ul>
                                         </select>
                                     </div>
@@ -47,7 +61,7 @@ export default function OperationsFormVisit(props) {
                                     <div class="dropdown">
                                         <select className="form-select bg-light border-0" ><span class="caret"></span>
                                             <ul class="dropdown-menu">
-                                                <li><option value="val1"> 11 </option></li>
+                                                <li><option value={1}> 11 </option></li>
                                                 <li><option value="val2"> 12 </option></li>
                                                 <li><option value="val3"> 13 </option></li>
                                                 <li><option value="val4"> 14 </option></li>
