@@ -23,7 +23,7 @@ export default function Main(props) {
     return (<>
         <section id="content">
 
-            <main>
+            <main >
                 <div className="head-title">
                     <div className="left">
                         <h1>Dashboard</h1>
@@ -45,7 +45,7 @@ export default function Main(props) {
                         <Link to={"../bookappointment"}><span className="text" style={{ color: "white" }}>Add Appointment </span></Link>
                     </a>
                 </div>
-                <div>
+                <div >
                     <ul className="box-info">
                         <li>
                             <i className="bx bxs-calendar-check" />
@@ -61,6 +61,8 @@ export default function Main(props) {
                                 <p>All Patient</p>
                             </span>
                         </li>
+
+
                         {totalBalance}
                     </ul>
 

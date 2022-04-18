@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import OperationsFormVisit from '../tables/OperationsFormVisit'
 
 
-import AutoComplete from "../../Autocomplete/AutoComplete";
+// import AutoComplete from "../../Autocomplete/AutoComplete";
 import PopUpMultipleOps from './PopUpMultipleOps.js'
 {/* USE THIS TO AUTOFILL THE FORM:
 <div>
@@ -50,6 +50,7 @@ export default function AfterVisit() {
                                     <div className="col-12 col-sm-6">
                                     </div>
                                     <div className="col-12 col-sm-6">
+                                        
                                         <br /> <br />
                                         {/* <label for="myfile"> Operation</label>
                                         <select className="form-select bg-light border-0" style={{ height: '55px' }}>

@@ -38,8 +38,7 @@ export default function NavBar(props) {
       <div className="container">
         <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
           <a className="navbar-brand">
-            <h1 className="m-0 text-primary">
-              <Link to={"../"}> MyClinic</Link></h1>
+            <img src="assets/img/logo_1.jpeg" class="img-fluid" alt="Responsive image" style={{ objectFit: 'cover' }} />
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
