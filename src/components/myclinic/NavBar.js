@@ -19,7 +19,7 @@ export default function NavBar(props) {
 
     joinworker = "./joinworker";
     joinclinic = "./joinclinic";
-    dev="./ourteam"
+    dev = "./ourteam"
   } else {
     team = "../team";
     about = "../about";
@@ -38,7 +38,11 @@ export default function NavBar(props) {
       <div className="container">
         <nav className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
           <a className="navbar-brand">
-            <img src="assets/img/logo_1.jpeg" class="img-fluid" alt="Responsive image" style={{ objectFit: 'cover' }} />
+            <img src="assets/img/logo_1.jpeg" class="img-fluid" alt="Responsive image" style={{
+              objectFit: 'cover',
+              width: '65%',
+              height: '7%'
+            }} />
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,7 +55,7 @@ export default function NavBar(props) {
                     <Link to={"../"}> Home</Link>
                   </a>
                 </li>
-                
+
                 <li className="nav-item">
                   <a className="nav-item nav-link ">
                     <Link to={operations}> Operations</Link>
