@@ -35,10 +35,8 @@ import emailjs from 'emailjs-com';
 
 export default function App() {
   const [data, setData] = useState([])
-  const WAIT_TIME = 10;
 
   useEffect(() => {
-    const id = setInterval(() => {
       axios
         .get("http://127.0.0.1:8000/api/appointments/")
         .then((res) => {
@@ -47,8 +45,6 @@ export default function App() {
         .catch((error) => {
           console.log(error);
         });
-    }, WAIT_TIME);
-    return () => clearInterval(id);
   }, [data]);
 
   for (let index = 0; index < data.length; index++) {

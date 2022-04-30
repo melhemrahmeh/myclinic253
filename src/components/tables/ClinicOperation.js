@@ -11,7 +11,6 @@ export default function ClinicOperation() {
     const WAIT_TIME = 200;
 
     useEffect(() => {
-        const id = setInterval(() => {
             axios
                 .get("https://myclinic-web.azurewebsites.net/api/operations/")
                 .then((res) => {
@@ -21,8 +20,6 @@ export default function ClinicOperation() {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [operations]);
 
 

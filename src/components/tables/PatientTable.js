@@ -12,12 +12,9 @@ export default function PatientTable() {
     const [buttonPopup, setButtonPopup] = useState(false);
     const [EditPopup, setEditPopup] = useState(false);
 
-    const WAIT_TIME = 200;
-
     //http://127.0.0.1:8000/api/patients/visits/3/
 
     useEffect(() => {
-        const id = setInterval(() => {
             axios
                 .get("https://myclinic-web.azurewebsites.net/api/patients/")
                 .then((res) => {
@@ -27,8 +24,6 @@ export default function PatientTable() {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [data]);
 
     function getPatientVisit(patient) {
@@ -145,10 +140,10 @@ export default function PatientTable() {
         })
             .then((response) => {
                 console.log(response.data);
-            })
+        })
             .catch((e) => {
                 console.log(e);
-            });
+        });
         
         
         var name = firstName + " " + lastName

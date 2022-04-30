@@ -5,10 +5,8 @@ import axios from "axios";
 export default function Material_Table() {
     const [data, setData] = useState([]);
 
-    const WAIT_TIME = 200;
 
     useEffect(() => {
-        const id = setInterval(() => {
             axios
                 .get("https://myclinic-web.azurewebsites.net/api/employees/")
                 .then((res) => {
@@ -18,8 +16,6 @@ export default function Material_Table() {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [data]);
 
     function deleteRow(id, e) {

@@ -10,7 +10,6 @@ export default function ContactRequests() {
     const WAIT_TIME = 200;
 
     useEffect(() => {
-        const id = setInterval(() => {
             axios
                 .get("https://myclinic-web.azurewebsites.net/api/forms/")
                 .then((res) => {
@@ -20,8 +19,6 @@ export default function ContactRequests() {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [data]);
 
 

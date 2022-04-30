@@ -8,7 +8,6 @@ export default function ClinicRooms() {
     const WAIT_TIME = 200;
 
     useEffect(() => {
-        const id = setInterval(() => {
             axios
                 .get("https://myclinic-web.azurewebsites.net/api/rooms/")
                 .then((res) => {
@@ -18,8 +17,6 @@ export default function ClinicRooms() {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [data]);
 
 

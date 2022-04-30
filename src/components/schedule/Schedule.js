@@ -5,12 +5,9 @@ import axios from "axios";
 export default function Schedule() {
     const [data, setData] = useState([]);
 
-    const WAIT_TIME = 500;
-
     useEffect(() => {
-        const id = setInterval(() => {
-            axios
-                .get("https://myclinic-web.azurewebsites.net/api/appointments/")
+        axios
+            .get("https://myclinic-web.azurewebsites.net/api/appointments/")
             .then((res) => {
                 setData(res.data);
                 console.log("Result:", data);
@@ -18,36 +15,31 @@ export default function Schedule() {
             .catch((error) => {
                 console.log(error);
             });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
     }, [data]);
 
     const [operations, setOperations] = useState([]);
 
     useEffect(() => {
-        const id = setInterval(() => {
-            axios
-                .get("https://myclinic-web.azurewebsites.net/api/operations/")
-                .then((res) => {
-                    setOperations(res.data);
-                    console.log("Result:", data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }, WAIT_TIME);
-        return () => clearInterval(id);
+        axios
+            .get("https://myclinic-web.azurewebsites.net/api/operations/")
+            .then((res) => {
+                setOperations(res.data);
+                console.log("Result:", data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }, [data]);
 
 
     const parsedData = [
     ];
 
-    function getOpName(id) { 
+    function getOpName(id) {
         for (let index = 0; index < operations.length; index++) {
             const element = operations[index];
             console.log(element.title);
-            if (element._id === id) { 
+            if (element._id === id) {
                 return element.title
             }
         }
@@ -56,12 +48,12 @@ export default function Schedule() {
 
     for (let i = 0; i < data.length; i++) {
         let t = data[i].time
-        let end = new Date(data[i].date + "T" + data[i].time + "+03:00")       
+        let end = new Date(data[i].date + "T" + data[i].time + "+03:00")
         end.setMinutes(end.getMinutes() + 30);
 
         parsedData.push({
-            Subject: data[i].firstName + data[i].lastName + " ("+ getOpName(data[i].operation) + ") ",
-            StartTime: new Date(data[i].date+"T"+data[i].time+"+03:00"),
+            Subject: data[i].firstName + data[i].lastName + " (" + getOpName(data[i].operation) + ") ",
+            StartTime: new Date(data[i].date + "T" + data[i].time + "+03:00"),
             EndTime: new Date(end)
         });
     }
