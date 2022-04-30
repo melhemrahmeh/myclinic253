@@ -7,6 +7,19 @@ import { useState, useEffect } from 'react';
 
 export default function DashMainTables(props) {
 
+    const [patients, setPatients] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("https://myclinic-web.azurewebsites.net/api/patients/")
+            .then((res) => {
+                setPatients(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
 
     let navigate = useNavigate();
     const [patient, setPatient] = useState("");
@@ -14,8 +27,25 @@ export default function DashMainTables(props) {
     const [time, setTime] = useState("");
     const [operation, setOperation] = useState(1);
 
-    const addNewAppointment = async () => {
+
+    const addNewAppointment = async (patient) => {
+        const [firstName, setFirstName] = useState("");
+        const [lastName, setLastName] = useState("");
+        const [email, setEmail] = useState("");
+
+        for (let index = 0; index < patients.length; index++) {
+            const element = patients[index];
+            if (element._id === patient) { 
+                setFirstName(patient.firstName)
+                setLastName(patient.lastName)
+                setEmail(patient.email)
+            }
+        }
+
         const form = {
+            firstName,
+            lastName,
+            email,
             date,
             time,
             operation
@@ -53,20 +83,6 @@ export default function DashMainTables(props) {
             .get("https://myclinic-web.azurewebsites.net/api/patients/visits/")
             .then((res) => {
                 setVisits(res.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
-
-
-    const [patients, setPatients] = useState([]);
-
-    useEffect(() => {
-        axios
-            .get("https://myclinic-web.azurewebsites.net/api/patients/")
-            .then((res) => {
-                setPatients(res.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -168,7 +184,7 @@ export default function DashMainTables(props) {
                                                             onChange={(e) => setPatient(e.target.value)}
                                                             style={{ height: "55px" }}
                                                         >
-                                                            {operations.map((op) => (<option value={op._id}>{op.title} {op.cost}$ </option>))}
+                                                            {patients.map((op) => (<option value={op._id}>{op.firstName} {op.lastName}$ </option>))}
                                                         </select>
                                                     </div>
 
@@ -219,7 +235,7 @@ export default function DashMainTables(props) {
                                                         <button
                                                             className="btn btn-primary w-100 py-3"
                                                             type="submit"
-                                                            onClick={addNewAppointment}
+                                                            onClick={addNewAppointment(patient._id)}
                                                         >
                                                             Book
                                                         </button>
@@ -277,8 +293,6 @@ export default function DashMainTables(props) {
                                 <th style={{ 'color': "#535356" }}>Phone Number</th>
                                 <th style={{ 'color': "#535356" }}>Date and Time</th>
                                 <th style={{ 'color': "#535356" }}>Operations</th>
-                                <th style={{ 'color': "#535356" }}>Paid</th>
-                                <th style={{ 'color': "#535356" }}>Pending</th>
                             </tr>
                         </thead>
 
@@ -289,8 +303,6 @@ export default function DashMainTables(props) {
                                     <td style={{ 'color': "#5D5C63" }}>{patientsNumbers[index]}</td>
                                     <td style={{ 'color': "#5D5C63" }}>{visit.visitdate}</td>
                                     <td style={{ 'color': "#5D5C63" }}>{operationsVisitName[index]}</td>
-                                    <td style={{ 'color': "#5D5C63" }}>0$</td>
-                                    <td style={{ 'color': "#5D5C63" }}>0$</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -299,7 +311,5 @@ export default function DashMainTables(props) {
                 </div>
             </div>
         </div>
-
-
     );
 }

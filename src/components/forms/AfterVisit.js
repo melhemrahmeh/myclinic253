@@ -43,6 +43,7 @@ export default function AfterVisit() {
     const [notes, setNotes] = useState("");
     const [file, setFile] = useState("");
     const [discount, setDiscount] = useState("");
+    const [pending, setPending] = useState("");
     const notify = () => toast.success(`Visit Summary sent!`);
 
     const addVisit = async (e) => {
@@ -67,8 +68,72 @@ export default function AfterVisit() {
             .catch((e) => {
                 console.log(e);
             });
+ 
+        
+
+
     };
 
+    // function updateFinances(e) {
+    //     e.preventDefault();
+
+    //     const firstName = ""
+    //     const lastName = ""
+    //     const PhoneNumber = ""
+    //     const email = ""
+    //     const birthDate = ""
+    //     const address = ""
+    //     const gender = ""
+    //     const E_firstName = ""
+    //     const E_lastName = ""
+    //     const E_contactNumber = ""
+    //     const totalBalance = operationCost - operationCost * discount / 100
+    //     const pendingBalance = pending     
+
+        
+    //     for (let index = 0; index < data.length; index++) {
+    //         const element = array[index];
+    //         if (element._id === patient) { 
+    //             firstName = element.firstName
+    //             lastName = element.lastName
+    //             PhoneNumber = element.PhoneNumber
+    //             email = element.email
+    //             birthDate = element.birthDate
+    //             address = element.address
+    //             gender = element.gender
+    //             E_firstName = element.E_firstName
+    //             E_lastName = element.E_lastName
+    //             E_contactNumber = element.E_contactNumber
+    //         }
+    //     }
+
+    //     const form = {
+    //         firstName,
+    //         lastName,
+    //         PhoneNumber,
+    //         email,
+    //         birthDate,
+    //         address,
+    //         gender,
+    //         E_firstName,
+    //         E_lastName,
+    //         E_contactNumber,
+    //         totalBalance,
+    //         pendingBalance
+    //     };
+    //     console.log(form);
+    //     axios({
+    //         method: "PUT",
+    //         url: `https://myclinic-web.azurewebsites.net/api/patients/update/${id}/`,
+    //         data: form,
+    //     })
+    //         .then((response) => {
+    //             console.log(response.data);
+    //         })
+    //         .catch((e) => {
+    //             console.log(e);
+    //         });
+    // }
 
     // const [patient, setPatient] = useState(1);
     // const [visitdate, setVisitDate] = useState(1);
@@ -149,6 +214,15 @@ export default function AfterVisit() {
             }
         }
 
+        var operationCost = []
+        for (let index = 0; index < operations.length; index++) {
+            const element = operations[index];
+            if (parseInt(element._id) === parseInt(operation)) {
+                operationCost = element.cost
+            }
+        }
+
+
         const values = {
             name: patientData.firstName + " " + patientData.lastName,
             email: patientData.email,
@@ -156,8 +230,8 @@ export default function AfterVisit() {
             operation: operationName,
             medicaments:medicaments,
             notes: notes,
-            visitcost: 0,
-            pending: 0,
+            visitcost: operationCost - operationCost*discount/100,
+            pending: pending,
         };
 
         e.preventDefault();
@@ -168,6 +242,71 @@ export default function AfterVisit() {
             }, error => {
                 console.log('FAILED...', error);
             });
+        
+        
+        
+        // const firstName = ""
+        // const lastName = ""
+        // const PhoneNumber = ""
+        // const email = ""
+        // const birthDate = ""
+        // const address = ""
+        // const gender = ""
+        // const E_firstName = ""
+        // const E_lastName = ""
+        // const E_contactNumber = ""
+        // const totalBalance = ""
+        // const pendingBalance = ""
+
+
+        // for (let index = 0; index < data.length; index++) {
+        //     const element = data[index];
+        //     if (element._id === patient) {
+        //         firstName = element.firstName
+        //         lastName = element.lastName
+        //         PhoneNumber = element.PhoneNumber
+        //         email = element.email
+        //         birthDate = element.birthDate
+        //         address = element.address
+        //         gender = element.gender
+        //         E_firstName = element.E_firstName
+        //         E_lastName = element.E_lastName
+        //         E_contactNumber = element.E_contactNumber
+        //         totalBalance = element.totalBalance
+        //         pendingBalance = element.pendingBalance
+        //     }
+        // }
+
+        // totalBalance += parseInt(operationCost - operationCost * discount / 100)
+        // pendingBalance += parseInt(pending)
+
+
+        // const form = {
+        //     firstName,
+        //     lastName,
+        //     PhoneNumber,
+        //     email,
+        //     birthDate,
+        //     address,
+        //     gender,
+        //     E_firstName,
+        //     E_lastName,
+        //     E_contactNumber,
+        //     totalBalance,
+        //     pendingBalance
+        // };
+        // console.log(form);
+        // axios({
+        //     method: "PUT",
+        //     url: `https://myclinic-web.azurewebsites.net/api/patients/update/${patient}/`,
+        //     data: form,
+        // })
+        //     .then((response) => {
+        //         console.log(response.data);
+        //     })
+        //     .catch((e) => {
+        //         console.log(e);
+        //     });
     }
     return (
         <div className="container-fluid bg-primary my-5 py-5">
@@ -232,6 +371,17 @@ export default function AfterVisit() {
                                             />
                                         </div>
                                     </div>
+                                    <div className="col-12 col-sm-6">
+                                        <br />
+                                        <div className="date" id="date" data-target-input="nearest">
+                                            <label>Pending</label>
+                                            <input className="form-control bg-light border-0" type="number" placeholder="0" min="0" max="100"
+                                                name="pending"
+                                                value={pending}
+                                                onChange={(e) => setPending(e.target.value)}
+                                            />
+                                        </div>
+                                    </div>
 
                                     <div className="col-12 col-sm-6">
                                         <br />
@@ -279,7 +429,7 @@ export default function AfterVisit() {
                                     <button
                                         className="btn btn-primary w-100 py-3"
                                         type="submit"
-                                        onClick={(e) => { addVisit(e); notify(); handleSubmit(e) }}
+                                        onClick={(e) => { addVisit(e); notify(); handleSubmit(e);}}
                                     >
                                         Send Visit Summary
                                     </button>
